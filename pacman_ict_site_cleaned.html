@@ -1,0 +1,242 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Pac‑Man ICT Site</title>
+<style>
+    :root{--bg:#0b1220;--panel:#0f2433;--accent:#ffd34d;--muted:#8aa4b2}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial;background: radial-gradient(circle at 10% 10%, rgba(255,211,77,0.03), transparent 5%), linear-gradient(180deg,#071022 0%, #05111a 100%), #021018;color:#e6f6ff}
+    header{display:flex;align-items:center;gap:18px;padding:18px 28px;background:linear-gradient(90deg, rgba(0,0,0,0.15), transparent);position:sticky;top:0;z-index:50}
+    .logo{display:flex;align-items:center;gap:12px}
+    .pac{width:48px;height:48px;background:var(--accent);border-radius:50%;position:relative;box-shadow:0 6px 18px rgba(0,0,0,0.4) inset}
+    /* mouth using clip-path animated */
+    .pac::before{content:'';position:absolute;inset:0;border-radius:50%;background:var(--accent);clip-path:polygon(50% 50%, 100% 25%, 100% 75%);transform-origin:50% 50%;animation:chomp .4s steps(2) infinite}
+    @keyframes chomp{0%{transform:rotate(0)}50%{transform:rotate(-30deg)}100%{transform:rotate(0)}}
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    nav a{color:#e6f6ff;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a.active, nav a:hover{background:rgba(255,211,77,0.08);color:var(--accent)}
+    main{padding:28px;max-width:1100px;margin:10px auto}
+    .page{display:none;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,12,0.6)}
+    .page.active{display:block}
+    h1{margin-top:0}
+    footer{padding:18px;text-align:center;color:var(--muted)}
+    /* Pacman dots background band */
+    .track{height:72px;background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;margin-bottom:18px}
+    .dot{width:10px;height:10px;border-radius:50%;background:#fff;opacity:.18}
+    /* simple responsive grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .card{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+    /* quiz styles */
+    .quiz-question{margin-bottom:12px;padding:12px;border-radius:8px}
+    .option{display:block;margin:6px 0}
+    .controls{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#05111a;padding:8px 12px;border-radius:8px;border:0;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    /* edit toolbar */
+    .toolbar{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:8px}
+    .toolbar button{padding:10px;border-radius:12px;border:0;cursor:pointer}
+    /* small helpers */
+    input[type=text]{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    textarea{width:100%;min-height:80px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    @media(min-width:900px){header{padding:18px 48px}main{padding:48px}}
+  </style>
+</head>
+<body style="">
+<header>
+<div class="logo">
+<div aria-hidden="true" class="pac"></div>
+
+</div>
+<nav aria-label="Main" id="mainNav">
+<a class="" data-target="home" href="#home">Home</a>
+<a class="" data-target="about" href="#about">About</a>
+<a class="" data-target="lessons" href="#lessons">Lessons</a>
+<a class="active" data-target="quiz" href="#quiz">Quiz</a>
+<a class="" data-target="resources" href="#resources">Resources</a>
+<a class="" data-target="gallery" href="#gallery">Gallery</a>
+<a class="" data-target="contact" href="#contact">Contact</a>
+<a class="" data-target="credits" href="#credits">Credits</a>
+</nav>
+</header>
+<main>
+<section class="page" id="home" tabindex="0">
+<div aria-hidden="true" class="track">
+<!-- decorative dots -->
+<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+<div style="margin-left:auto;color:var(--muted);font-weight:700">Pac‑Man Theme</div>
+</div>
+<h1 contenteditable="false">Welcome to the Pac‑Man ICT E-games</h1>
+<p contenteditable="false">Information and Communication Technology </p>
+<div class="grid">
+<div class="card" contenteditable="false">Explore the world of ICT! Learn how technology powers fun and learning through digital games, quizzes, and activities💻</div>
+<div class="card" contenteditable="false">Learn and test your knowledge!👊</div>
+</div>
+</section><section class="page" id="about" tabindex="0">
+<h1>About</h1>
+<p contenteditable="false">This website is all about ICT E-Games—how technology in giving connect in today's digital world. It was made to share information about the benefits, history, and types of e-games used for learning and fun. </p>
+</section>
+<section class="page" id="lessons" tabindex="0">
+<h1>Lessons</h1>
+<div class="card" contenteditable="false">
+<h3>ICT: current state, platforms &amp; systems</h3><div><br/></div><div><br/></div><div>https://sg.docworkspace.com/d/</div><div>sAJT4OnnzqP6oAYC02tO-pxQ</div><div><br/></div><div><br/></div>
+</div>
+</section>
+<section class="page active" id="quiz" tabindex="0">
+<h1>Quiz</h1>
+<div id="quizContainer"><div class="quiz-question card"><div><strong>1. ICT STANDS FOR:</strong></div><label class="option"><input name="q0" type="radio" value="0"/> International Communication Tools</label><label class="option"><input name="q0" type="radio" value="1"/> Integrated Computer Tecnology</label><label class="option"><input name="q0" type="radio" value="2"/> Information and Communication  Technology</label></div><div class="quiz-question card"><div><strong>2. Which of the following is an example of a convergent technology?</strong></div><label class="option"><input name="q1" type="radio" value="0"/> Typewriter</label><label class="option"><input name="q1" type="radio" value="1"/> Radio</label><label class="option"><input name="q1" type="radio" value="2"/> Smartphone</label></div><div class="quiz-question card"><div><strong>3. Web 2.0 is also known as:</strong></div><label class="option"><input name="q2" type="radio" value="0"/> Static Web</label><label class="option"><input name="q2" type="radio" value="1"/> Smart Web</label><label class="option"><input name="q2" type="radio" value="2"/> Social Web</label></div><div class="quiz-question card"><div><strong>4. Which platform is used mainly for professional networking?</strong></div><label class="option"><input name="q3" type="radio" value="0"/> Tiktok</label><label class="option"><input name="q3" type="radio" value="1"/> Spotify</label><label class="option"><input name="q3" type="radio" value="2"/> LinkedIn</label></div><div class="quiz-question card"><div><strong>5. Which ICT tools helps blind users access digital information?</strong></div><label class="option"><input name="q4" type="radio" value="0"/> Video calls</label><label class="option"><input name="q4" type="radio" value="1"/> E-learning</label><label class="option"><input name="q4" type="radio" value="2"/> Screen readers</label></div><div class="quiz-question card"><div><strong>6. An example of an e-commerce platform is:</strong></div><label class="option"><input name="q5" type="radio" value="0"/> Zoom</label><label class="option"><input name="q5" type="radio" value="1"/> Google Docs</label><label class="option"><input name="q5" type="radio" value="2"/> Amazon</label></div><div class="quiz-question card"><div><strong>7. Which generation of the web focuses on AI, blockchain, and decentralization?</strong></div><label class="option"><input name="q6" type="radio" value="0"/> Web 1.0</label><label class="option"><input name="q6" type="radio" value="1"/> Web 2.0</label><label class="option"><input name="q6" type="radio" value="2"/> Web 3.0</label></div><div class="quiz-question card"><div><strong>8. Which of the following is a challenge in social media?</strong></div><label class="option"><input name="q7" type="radio" value="0"/> Communication</label><label class="option"><input name="q7" type="radio" value="1"/> Entertainment</label><label class="option"><input name="q7" type="radio" value="2"/> Cyberbullying</label></div><div class="quiz-question card"><div><strong>9. 5G technology makes mobile devices:</strong></div><label class="option"><input name="q8" type="radio" value="0"/> Slower and Unstable</label><label class="option"><input name="q8" type="radio" value="1"/> Obsolete</label><label class="option"><input name="q8" type="radio" value="2"/> Faster and more reliable</label></div><div class="quiz-question card"><div><strong>10. Which of these is an example of ICT in education?</strong></div><label class="option"><input name="q9" type="radio" value="0"/> Textbooks only</label><label class="option"><input name="q9" type="radio" value="1"/> Whiteboards</label><label class="option"><input name="q9" type="radio" value="2"/> Google Classroom</label></div><div class="quiz-question card"><div><strong>11. ICT connects people, businesses, schools, and governments.</strong></div><label class="option"><input name="q10" type="radio" value="true"/> True</label><label class="option"><input name="q10" type="radio" value="false"/> False</label></div><div class="quiz-question card"><div><strong>12. Web 3.0 allows a smarter and more personalized internet experience.</strong></div><label class="option"><input name="q11" type="radio" value="true"/> True</label><label class="option"><input name="q11" type="radio" value="false"/> False</label></div><div class="quiz-question card"><div><strong>13. Online platforms like Shoppee and Lazada are examples of e-commerce .</strong></div><label class="option"><input name="q12" type="radio" value="true"/> True</label><label class="option"><input name="q12" type="radio" value="false"/> False</label></div><div class="quiz-question card"><div><strong>14. Assistive media helps people with disabilities access digital technologies.</strong></div><label class="option"><input name="q13" type="radio" value="true"/> True</label><label class="option"><input name="q13" type="radio" value="false"/> False</label></div><div class="quiz-question card"><div><strong>15. ICT Makes life easier but also makes us more dependent on technology.</strong></div><label class="option"><input name="q14" type="radio" value="true"/> True</label><label class="option"><input name="q14" type="radio" value="false"/> False</label></div><div class="quiz-question card"><div><strong>16. A phone you can use to call, text and go online.</strong></div><input name="q15" placeholder="Type your answer" type="text"/></div><div class="quiz-question card"><div><strong>17. The future version of the internet.</strong></div><input name="q16" placeholder="Type your answer" type="text"/></div><div class="quiz-question card"><div><strong>18. An app you use to pay money online.</strong></div><input name="q17" placeholder="Type your answer" type="text"/></div><div class="quiz-question card"><div><strong>19. The problem when some people have internet and others don't.</strong></div><input name="q18" placeholder="Type your answer" type="text"/></div><div class="quiz-question card"><div><strong>20. An app you can use for online group work.</strong></div><input name="q19" placeholder="Type your answer" type="text"/></div></div>
+<div class="controls" style="margin-top:12px">
+<button class="btn" id="submitQuiz">Submit</button>
+<button class="btn ghost" id="resetQuiz">Reset</button>
+<button class="btn ghost" id="editQuiz">Edit Quiz</button>
+</div>
+<div id="quizEditor" style="display:none;margin-top:12px">
+<textarea id="quizJson" placeholder="Edit the quiz JSON here"></textarea>
+<div class="controls" style="margin-top:8px">
+<button class="btn" id="saveQuizJson">Save</button>
+<button class="btn ghost" id="cancelEditQuiz">Cancel</button>
+</div>
+</div>
+</section>
+<section class="page" id="resources" tabindex="0">
+<h1>Resources</h1>
+<ul contenteditable="false">
+<li>Google Classroom</li>
+<li>Screen readers and accessibility tools</li>
+<li>E‑commerce platforms overview</li>
+</ul>
+</section>
+<section class="page" id="gallery" tabindex="0">
+<h1>Gallery</h1>
+<p contenteditable="false">Highlights the use of digital tools and platforms that make learning more engaging for students.</p>
+</section>
+<section class="page" id="contact" tabindex="0">
+<h1>Contact</h1>
+<p contenteditable="false">johnpaulobarangas@gmail.com</p>
+</section>
+<section class="page" id="credits" tabindex="0">
+<h1>Credits &amp; Notes</h1>
+<p contenteditable="false">The ICT E-games Pacman design was created by John Paulo Barangas. All quiz questions and materials were based on classroom lessons and references from ICT resources. </p>
+</section>
+</main>   <script>
+    // --- Navigation / hash routing ---
+    const pages = Array.from(document.querySelectorAll('.page'));
+    const navLinks = Array.from(document.querySelectorAll('nav a'));
+    function showPage(id){
+      pages.forEach(p => p.classList.toggle('active', p.id===id));
+      navLinks.forEach(a => a.classList.toggle('active', a.dataset.target===id));
+      location.hash = id;
+    }
+    window.addEventListener('hashchange', ()=>{ const id = location.hash.replace('#','')||'home'; showPage(id); });
+    navLinks.forEach(a=>a.addEventListener('click', e=>{ e.preventDefault(); showPage(a.dataset.target); }));
+    // initialize
+    showPage(location.hash.replace('#','')||'home');
+
+    // --- Editable site toggle ---
+    const toggleEdit = document.getElementById('toggleEdit');
+    let editMode = false;
+    toggleEdit.addEventListener('click', ()=>{
+      editMode = !editMode;
+      document.querySelectorAll('main [contenteditable]').forEach(el=>el.contentEditable = editMode);
+      toggleEdit.textContent = editMode ? 'Exit Edit' : 'Toggle Edit';
+      // small visual cue
+      document.body.style.outline = editMode ? '4px dashed rgba(255,211,77,0.08)' : '';
+    });
+
+    // --- Download current HTML ---
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='pacman_ict_site.html'; a.click();
+    });
+
+    // --- Quiz data (imported from uploaded PPTX) ---
+    // The quiz below is pre-populated from the presentation file the user uploaded. You can edit it via "Edit Quiz".
+    let quiz = [
+      {type:'mc',q:'ICT STANDS FOR:',opts:['International Communication Tools','Integrated Computer Tecnology','Information and Communication  Technology'],a:2},
+      {type:'mc',q:'Which of the following is an example of a convergent technology?',opts:['Typewriter','Radio','Smartphone'],a:2},
+      {type:'mc',q:'Web 2.0 is also known as:',opts:['Static Web','Smart Web','Social Web'],a:2},
+      {type:'mc',q:'Which platform is used mainly for professional networking?',opts:['Tiktok','Spotify','LinkedIn'],a:2},
+      {type:'mc',q:'Which ICT tools helps blind users access digital information?',opts:['Video calls','E-learning','Screen readers'],a:2},
+      {type:'mc',q:'An example of an e-commerce platform is:',opts:['Zoom','Google Docs','Amazon'],a:2},
+      {type:'mc',q:'Which generation of the web focuses on AI, blockchain, and decentralization?',opts:['Web 1.0','Web 2.0','Web 3.0'],a:2},
+      {type:'mc',q:'Which of the following is a challenge in social media?',opts:['Communication','Entertainment','Cyberbullying'],a:2},
+      {type:'mc',q:'5G technology makes mobile devices:',opts:['Slower and Unstable','Obsolete','Faster and more reliable'],a:2},
+      {type:'mc',q:'Which of these is an example of ICT in education?',opts:['Textbooks only','Whiteboards','Google Classroom'],a:2},
+      {type:'tf',q:'ICT connects people, businesses, schools, and governments.',a:true},
+      {type:'tf',q:'Web 3.0 allows a smarter and more personalized internet experience.',a:true},
+      {type:'tf',q:'Online platforms like Shoppee and Lazada are examples of e-commerce .',a:true},
+      {type:'tf',q:'Assistive media helps people with disabilities access digital technologies.',a:true},
+      {type:'tf',q:'ICT Makes life easier but also makes us more dependent on technology.',a:true},
+      {type:'id',q:'A phone you can use to call, text and go online.',a:'Smartphone'},
+      {type:'id',q:'The future version of the internet.',a:'Web 4.0'},
+      {type:'id',q:'An app you use to pay money online.',a:'GCash'},
+      {type:'id',q:'The problem when some people have internet and others don\'t.',a:'Digital Divide'},
+      {type:'id',q:'An app you can use for online group work.',a:'Google Docs'}
+    ];
+
+    const quizContainer = document.getElementById('quizContainer');
+    function renderQuiz(){
+      quizContainer.innerHTML = '';
+      quiz.forEach((item,i)=>{
+        const wrap = document.createElement('div'); wrap.className='quiz-question card';
+        const q = document.createElement('div'); q.innerHTML = `<strong>${i+1}. ${item.q}</strong>`;
+        wrap.appendChild(q);
+        if(item.type==='mc'){
+          item.opts.forEach((opt,j)=>{
+            const id = `q${i}o${j}`;
+            const label = document.createElement('label'); label.className='option';
+            label.innerHTML = `<input type='radio' name='q${i}' value='${j}'> ${opt}`;
+            wrap.appendChild(label);
+          });
+        } else if(item.type==='tf'){
+          ['True','False'].forEach((t)=>{ const label=document.createElement('label');label.className='option';label.innerHTML = `<input type='radio' name='q${i}' value='${t.toLowerCase()}'> ${t}`;wrap.appendChild(label); });
+        } else if(item.type==='id'){
+          const input = document.createElement('input'); input.type='text'; input.name = `q${i}`; input.placeholder='Type your answer'; wrap.appendChild(input);
+        }
+        quizContainer.appendChild(wrap);
+      });
+    }
+    renderQuiz();
+
+    document.getElementById('submitQuiz').addEventListener('click', ()=>{
+      let score=0; const total=quiz.length; const details=[];
+      quiz.forEach((item,i)=>{
+        const name = `q${i}`;
+        const inputs = document.getElementsByName(name);
+        let userAns = null;
+        if(item.type==='mc'){
+          for(const el of inputs) if(el.checked) userAns = Number(el.value);
+          if(userAns===item.a){ score++; details.push(true); } else details.push(false);
+        } else if(item.type==='tf'){
+          for(const el of inputs) if(el.checked) userAns = (el.value==='true');
+          if(userAns===item.a){ score++; details.push(true);} else details.push(false);
+        } else if(item.type==='id'){
+          const val = inputs[0].value.trim().toLowerCase(); if(val === (''+item.a).toLowerCase()){ score++; details.push(true);} else details.push(false);
+        }
+      });
+      alert(`You scored ${score} / ${total}`);
+      // highlight results
+      const qs = document.querySelectorAll('.quiz-question');
+      qs.forEach((el,idx)=>{ el.style.border = details[idx] ? '2px solid rgba(0,200,80,0.15)' : '2px solid rgba(255,80,80,0.08)'; });
+    });
+
+    document.getElementById('resetQuiz').addEventListener('click', ()=>{ document.querySelectorAll('#quizContainer input').forEach(i=>{ if(i.type==='radio') i.checked=false; else i.value=''; }); document.querySelectorAll('.quiz-question').forEach(el=>el.style.border=''); });
+
+    // --- Quiz editor ---
+    const editBtn = document.getElementById('editQuiz');
+    const quizEditor = document.getElementById('quizEditor');
+    const quizJson = document.getElementById('quizJson');
+    editBtn.addEventListener('click', ()=>{
+      quizEditor.style.display = 'block'; quizJson.value = JSON.stringify(quiz,null,2); quizJson.focus();
+    });
+    document.getElementById('cancelEditQuiz').addEventListener('click', ()=>{ quizEditor.style.display='none'; });
+    document.getElementById('saveQuizJson').addEventListener('click', ()=>{
+      try{
+        const newQuiz = JSON.parse(quizJson.value);
+        if(!Array.isArray(newQuiz)) throw new Error('Quiz must be an array');
+        quiz = newQuiz; renderQuiz(); quizEditor.style.display='none'; alert('Quiz updated');
+      }catch(e){ alert('Error parsing quiz JSON: '+e.message); }
+    });
+
+    // --- Quick accessibility: focus outline for active page ---
+    document.querySelectorAll('nav a').forEach(a=>a.addEventListener('keydown', e=>{ if(e.key==='Enter') a.click(); }));
+  </script>
+</body></html>
